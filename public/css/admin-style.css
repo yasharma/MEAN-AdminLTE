@@ -1,0 +1,19 @@
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic);
+body{height: 100%; }
+html {background: #d2d6de;}
+
+/* Style for admin layout */
+/*md-input-container:not(.md-input-invalid).md-input-focused .md-input,
+.form-control:focus{border-color: #605ca8; }
+md-input-container:not(.md-input-invalid).md-input-focused label, a{color: #605ca8; }*/
+a, a:hover, a:active, a:focus{color: #514E8F; }
+md-input-container:not(.md-input-invalid) > md-icon.gray {color: gray; } 
+md-input-container:not(.md-input-invalid) > md-icon.name {color: dodgerblue; }
+md-input-container.md-input-invalid > md-icon.gray,
+md-input-container.md-input-invalid > md-icon.name {color: red; }
+.md-toast-animating{ overflow: auto!important;  }
+/*For toast message*/
+md-toast.error .md-toast-content, md-toast.success .md-toast-content{color: rgb(255, 255, 255); font-weight: 600;}
+md-toast.error .md-toast-content {background-color: #db5454; }
+md-toast.success .md-toast-content {background-color: #76b648; }
+.md-tab { font-weight: 600; }

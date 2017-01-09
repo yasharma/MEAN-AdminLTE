@@ -1,0 +1,38 @@
+
+<div class="login-logo">Admin Login </div>
+<!-- /.login-logo -->
+<div class="login-box-body">
+	<p class="login-box-msg">Sign in to start your session</p>
+
+	<form name="adminLoginForm" ng-submit="vm.signin(adminLoginForm.$valid)" novalidate>
+		<md-input-container class="md-block" flex-gt-sm>
+			<label>Email</label>
+			<input ng-model="vm.admin.email" type="email" name="email" placeholder="Enter Your Email" ng-required="true">
+			<md-icon class="gray">email</md-icon>
+			<div ng-messages="adminLoginForm.email.$error">
+				<div ng-message="required">Email is required.</div>
+			</div>
+		</md-input-container>
+		<md-input-container class="md-block" flex-gt-sm>
+			<label>Password</label>
+			<input ng-model="vm.admin.password" type="password" name="password" placeholder="Enter Your Password" ng-required="true">
+			<md-icon class="gray">lock</md-icon>
+			<div ng-messages="adminLoginForm.password.$error">
+				<div ng-message="required">Password is required.</div>
+			</div>
+		</md-input-container>	
+		<div class="row">
+			<!-- /.col -->
+			<div class="col-xs-4">
+				<md-button type="submit" class="md-raised md-primary">Sign In</md-button>
+			</div>
+			<div class="col-xs-8 social-auth-links">
+				<p class="pull-right"><a href="#">I forgot my password</a></p>
+			</div>
+			<!-- /.col -->
+		</div>
+	</form>
+	
+
+</div>
+<!-- /.login-box-body -->

@@ -1,0 +1,11 @@
+{
+    "node": true,
+    "esversion": 6,
+    "globals": {
+        "$": false,
+        "navigator": false,
+        "google":false,
+        "document": false
+    },
+    "predef": ["angular"]
+}

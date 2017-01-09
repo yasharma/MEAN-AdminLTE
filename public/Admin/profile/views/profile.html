@@ -1,0 +1,101 @@
+<!-- Content Header (Page header) -->
+<section class="content-header">
+	<h1> Account Settings</h1>
+</section>
+
+<!-- Main content -->
+<section class="content">
+	<div class="row">
+		<div class="col-md-12">
+			<md-content>
+				<md-tabs md-dynamic-height md-border-bottom>
+					<md-tab label="Mange Profile">
+						<md-content class="md-padding">
+							<form name="adminProfleForm" ng-submit="vm.update(adminProfleForm.$valid)" novalidate>
+								<div layout-gt-sm="row">
+									<md-input-container class="md-block" flex-gt-sm>
+										<label>Firstname</label>
+										<input ng-model="vm.admin.firstname" name="firstname" placeholder="Enter Your Firstname" ng-required="true"
+										ng-maxlength="20">
+										<div ng-messages="adminProfleForm.firstname.$error">
+											<div ng-message="required">Firstname is required.</div>
+											<div ng-message="maxlength">Firstname cannot be more then 20 characters.</div>
+										</div>
+									</md-input-container>
+
+									<md-input-container class="md-block" flex-gt-sm>
+										<label>Lastname</label>
+										<input ng-model="vm.admin.lastname" name="lastname" placeholder="Enter Your Lastname" ng-required="true"
+										ng-maxlength="20">
+										<div ng-messages="adminProfleForm.lastname.$error">
+											<div ng-message="required">Lastname is required.</div>
+											<div ng-message="maxlength">Lastname cannot be more then 20 characters.</div>
+										</div>
+									</md-input-container>
+								</div>
+								<md-input-container class="md-block" flex-gt-sm>
+									<input ng-model="vm.admin.email" type="email" name="email" placeholder="Email" disabled>
+									<md-icon class="gray">email</md-icon>
+								</md-input-container>
+								<div class="row">
+									<!-- /.col -->
+									<div class="col-xs-4">
+										<md-button type="submit" class="md-raised md-primary">Update</md-button>
+									</div>
+								</div>	
+							</form>
+						</md-content>
+					</md-tab>
+
+					<md-tab label="Change Password">
+						<md-content class="md-padding">
+							<form name="vm.changePasswordForm" ng-submit="vm.changePassword(vm.changePasswordForm.$valid)" novalidate>
+
+								<md-input-container class="md-block" flex-gt-sm>
+									<label>Current Password</label>
+									<input type="password" name="current_password" placeholder="Enter Your Current Password" 
+									ng-model="vm.passwordDetails.current_password"
+									ng-required="true">
+									<div ng-messages="vm.changePasswordForm.current_password.$error">
+										<div ng-message="required">Current Password is required.</div>
+									</div>
+								</md-input-container>
+
+								<md-input-container class="md-block" flex-gt-sm>
+									<label>New Password</label>
+									<input type="password" name="new_password" placeholder="Enter New Password" 
+									ng-model="vm.passwordDetails.new_password"
+									ng-required="true"
+									ng-minlength="6">
+									<div ng-messages="vm.changePasswordForm.new_password.$error">
+										<div ng-message="required">New Password is required.</div>
+										<div ng-message="minlength">New Password must be atleast 6 characters long.</div>
+									</div>
+								</md-input-container>
+
+								<md-input-container class="md-block" flex-gt-sm>
+									<label>Confirm Password</label>
+									<input type="password" name="confirm_password" placeholder="Confirm Your Password" 
+									ng-model="vm.passwordDetails.confirm_password"
+									ng-required="true"
+									password-verify="vm.passwordDetails.new_password">
+									<div ng-messages="vm.changePasswordForm.confirm_password.$error">
+										<div ng-message="required">Confirm Password is required.</div>
+										<div ng-show="vm.changePasswordForm.confirm_password.$error.passwordVerify">Passwords do not match.</div>
+									</div>
+								</md-input-container>
+								<div class="row">
+									<!-- /.col -->
+									<div class="col-xs-4">
+										<md-button type="submit" class="md-raised md-primary">Change</md-button>
+									</div>
+								</div>	
+							</form>
+						</md-content>
+					</md-tab>
+				</md-tabs>
+			</md-content>
+		</div>
+	</div>
+</section>
+<!-- /.content -->
