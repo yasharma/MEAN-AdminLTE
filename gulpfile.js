@@ -196,7 +196,7 @@ gulp.task('check:env', () => {
                     fs.writeFileSync(path,'NODE_ENV=development');
                 }
             } catch(e){
-                console.error(`System is unable to create ".env" file, please create ".env" file in root directory and specify the "NODE_ENV" to either one of these (cherrydoor-local, cherrydoor-dev, cherrydoor-qa, test, production) eg. NODE_ENV=cherrydoor-local`);
+                console.error(`System is unable to create ".env" file, please create ".env" file in root directory and specify the "NODE_ENV" to either one of these (development, production) eg. NODE_ENV=development`);
             }
         }
     });

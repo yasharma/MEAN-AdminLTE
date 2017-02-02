@@ -1,7 +1,7 @@
 "use strict";
 const config = {
 	db: {
-		URL: 'mongodb://localhost/immigration',
+		URL: 'mongodb://localhost/adminlte',
 		DEBUG: true,
 		autoIndex: true
 	},
@@ -15,13 +15,13 @@ const config = {
 		    port: 587,
 		    secure: false, // use SSL
 		    auth: {
-		    	user: 'xearn.dev@gmail.com',
-		    	pass: 'flexsin@123'
+		    	user: process.env.USERNAME,
+		    	pass: process.env.PASSWORD
 		    }
 		},
-		from: '"Immigration" <xearn.dev@gmail.com>'
+		from: ` <${process.env.USERNAME}>`
 	},
-   	mailTransporter: 'sendgrid', // either sendgrid or gmail
+   	mailTransporter: 'gmail',
    	salt: '51ca5acbce3e6a5b2dd9772b36cff34c',
    	secret: '876sdf&%&^435345(*^&^654sdsdc&^&kjsdfjbksdureyy3(&(*&(&7$%^#%#&^*(&)*)*',
    	allowed_image_extensions : ['image/jpeg','image/jpg','image/png','image/gif','image/bmp'],
