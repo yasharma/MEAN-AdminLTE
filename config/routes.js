@@ -22,9 +22,7 @@ router.use(expressJWT({
 		'/register',
 		'/login',
 		/^\/verifyEmail\/.*/,
-		/^\/reset\/.*/,
-		/^\/property_detail\/.*/,
-		/^\/property_additionals\/.*/
+		/^\/reset\/.*/
 	]
 }));
 /*
