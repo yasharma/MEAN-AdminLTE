@@ -121,6 +121,7 @@ gulp.task('app:uglify', (cb) => {
             './public/User/config/*.js',
             './public/User/factories/*.js',
             './public/User/home/*.js',
+            './public/User/contact/*.js'
         ]),
         concat('app.min.js'),
         uglify(),

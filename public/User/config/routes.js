@@ -13,8 +13,12 @@ angular.module('app.routes', ['ngRoute','angular-loading-bar'])
 		controller: 'homeCtrl',
 		templateUrl: 'User/contact/views/contact.html'
 	})
+	.when('/services', {
+		controller: 'homeCtrl',
+		templateUrl: 'User/services/views/services.html'
+	})
 	.otherwise({
 		redirectTo: '/'
 	});
-	// $locationProvider.html5Mode(true);
+	$locationProvider.html5Mode(true);
 }]);

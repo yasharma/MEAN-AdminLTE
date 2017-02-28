@@ -36,6 +36,8 @@ app.use(compress({
 * these files will be access publicly
 */
 app.use(express.static(path.resolve('./public')));
+app.set('views', path.join(__dirname, '/public'));
+app.set('view engine', 'ejs');
 
 /*
 * uncomment the following when the favicon is available
@@ -54,8 +56,11 @@ app.use(morgan('dev'));
 app.use(helmet());
 
 /* Register all your routes */
-app.use('/', routes.router);
+app.use('/api', routes.router);
 app.use('/admin', routes.admin);
+app.get(/^((?!\/(api)).)*$/, function (req, res) {
+	res.render('index');
+});
 
 // Global Error Handler
 app.use((err, req, res, next) => {

@@ -36,7 +36,6 @@ jsconfig.json
 .vscode/
 typings/
 /nbproject
-index.html
 public/images/property/
 Dockerfile
 public/images/profile/
