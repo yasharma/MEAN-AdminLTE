@@ -28,6 +28,9 @@
     "angular-bootstrap": "^2.4.0",
     "AdminLTE": "admin-lte#^2.3.8",
     "Ionicons": "ionicons#^2.0.1",
-    "font-awesome": "^4.7.0"
+    "font-awesome": "^4.7.0",
+    "angular-pouchdb": "^5.0.0",
+    "pouchdb-find": "^0.10.5",
+    "angular-material-data-table": "^0.10.10"
   }
 }

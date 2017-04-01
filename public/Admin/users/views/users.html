@@ -1,0 +1,42 @@
+<!-- Content Header (Page header) -->
+<section class="content-header">
+	<h1> User's List <small>Mange your users</small></h1>
+	<ol class="breadcrumb">
+		<li><i class="fa fa-dashboard"></i> User's</li>
+	</ol>
+</section>
+<!-- Main content -->
+<section class="content">
+	<div class="row">
+		<div class="col-md-12">
+			<md-card>
+				<md-toolbar class="md-table-toolbar md-default">
+				  <div class="md-toolbar-tools">
+				    <span>User</span>
+				  </div>
+				</md-toolbar>
+				<md-table-container>
+				  <table md-table md-row-select multiple ng-model="selected" >
+				    <thead md-head >
+				      <tr md-row>
+				        <th md-column >Username</th>
+				        <th md-column >Email</th>
+				        <th md-column >Address</th>
+				        <th md-column >Date</th>
+				      </tr>
+				    </thead>
+				    <tbody md-body>
+				      <tr md-row md-select="user" md-select-id="username" md-auto-select ng-repeat="user in users">
+				        <td md-cell>{{user.doc.username}}</td>
+				        <td md-cell>{{user.doc.email}}</td>
+				        <td md-cell>{{user.doc.address}}</td>
+				        <td md-cell>{{user.doc.createdAt | date: 'medium'}}</td>
+				      </tr>
+				    </tbody>
+				  </table>
+				</md-table-container>
+			</md-card>	
+		</div>
+	</div>
+</section>
+<!-- /.content -->

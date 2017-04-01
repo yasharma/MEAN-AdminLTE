@@ -1,8 +1,8 @@
 'use strict';
 
 angular.module('app.controllers')
-.controller('dashboardCtrl', ['$scope', '$location', 'localStorageService','RestSvr', 'toastService','AuthSrv','$rootScope',
-	function($scope, $location, localStorageService, RestSvr, toastService, AuthSrv, $rootScope){
+.controller('dashboardCtrl', ['pouchDBSvr',
+	function(pouchDBSvr){
 		console.log('DashboardCrl');
 	}
 ]);	

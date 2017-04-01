@@ -59,8 +59,32 @@ angular.module('app.config', ['LocalStorageModule'])
 .config(['localStorageServiceProvider',function(localStorageServiceProvider){
 	localStorageServiceProvider.setPrefix('admin');
 }])
-.run(['$location','$rootScope', 'localStorageService', 'AuthSrv','toastService',
-	function($location, $rootScope, localStorageService, AuthSrv, toastService){
+.run(['$location','$rootScope', '$window','localStorageService', 'AuthSrv','toastService',
+	function($location, $rootScope, $window,localStorageService, AuthSrv, toastService){
+        // App Cache
+        function onUpdateReady() {
+          console.log('found new version!');
+          $window.applicationCache.update();
+        }
+        $window.applicationCache.addEventListener('updateready', onUpdateReady);
+        if($window.applicationCache.status === $window.applicationCache.UPDATEREADY) {
+          onUpdateReady();
+        }    
+        // Service workers
+        if ('serviceWorker' in navigator) {
+            
+            $window.addEventListener('load', function() {
+                navigator.serviceWorker.register('/sw.js').then(function(registration) {
+                    // Registration was successful
+                    console.log('ServiceWorker registration successful with scope: ', registration.scope);
+                    registration.update();
+                }).catch(function(err) {
+                    // registration failed :(
+                    console.log('ServiceWorker registration failed: ', err);
+                });
+            });
+        } 
+
     	$rootScope.$on("$routeChangeStart", function (event, nextRoute, currentRoute) {    
     		if ( nextRoute !== null && nextRoute.access !== undefined && nextRoute.access.requiredLogin && !AuthSrv.isLogged && !localStorageService.get('admin')) {
     		    console.log('inside if');

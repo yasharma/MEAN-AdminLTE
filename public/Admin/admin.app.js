@@ -12,8 +12,9 @@ angular.module('myAdmin', [
 	'app.filters',
 	'ngMessages',
 	'LocalStorageModule',
-	'ui.bootstrap'
-
+	'ui.bootstrap',
+	'pouchdb',
+	'md.data.table'
 ]);
 
 /* Setting up new module with its corresponding dependencies */

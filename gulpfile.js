@@ -101,7 +101,11 @@ gulp.task('admin-site:uglify', (cb) => {
             './public/bower_components/angular-local-storage/dist/angular-local-storage.js',
             './public/bower_components/bootstrap/dist/js/bootstrap.min.js',
             './public/bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js',
-            './public/bower_components/AdminLTE/dist/js/app.min.js'
+            './public/bower_components/AdminLTE/dist/js/app.min.js',
+            './public/bower_components/pouchdb/dist/pouchdb.min.js',
+            './public/bower_components/pouchdb-find/dist/pouchdb.find.min.js',
+            './public/bower_components/angular-pouchdb/angular-pouchdb.min.js',
+            './public/bower_components/angular-material-data-table/dist/md-data-table.min.js'
         ]),
         concat('admin-site.min.js'),
         uglify(),
@@ -141,7 +145,8 @@ gulp.task('admin.app:uglify', (cb) => {
             './public/Admin/directives/*.js',
             './public/Admin/auth/*.js',
             './public/Admin/dashboard/*.js',
-            './public/Admin/profile/*.js'
+            './public/Admin/profile/*.js',
+            './public/Admin/users/*.js'
         ]),
         concat('admin.app.min.js'),
         uglify(),
@@ -177,6 +182,7 @@ gulp.task('admin-site:cssmin', () => {
         './public/bower_components/Ionicons/css/ionicons.min.css',
         './public/bower_components/AdminLTE/dist/css/AdminLTE.min.css',
         './public/bower_components/AdminLTE/dist/css/skins/skin-purple.min.css',
+        './public/bower_components/angular-material-data-table/dist/md-data-table.min.css'
     ])
     .pipe(concat('admin-site.min.css'))
     .pipe(cleancss({compatibility: 'ie8', processImport: false}))

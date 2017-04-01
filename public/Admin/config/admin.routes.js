@@ -23,6 +23,12 @@ angular.module('app.routes', ['ngRoute','angular-loading-bar'])
 		templateUrl: 'Admin/profile/views/profile.html',
 		access: { requiredLogin: true }
 	})
+	.when('/users', {
+		controller: 'usersCtrl',
+		controllerAs: 'vm',
+		templateUrl: 'Admin/users/views/users.html',
+		access: { requiredLogin: true }
+	})
 	.when('/categories', {
 		controller: 'categoryCtrl',
 		controllerAs: 'vm',

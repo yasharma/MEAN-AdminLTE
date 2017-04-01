@@ -1,0 +1,24 @@
+CACHE MANIFEST
+# v7 2017-25-03
+
+CACHE:
+/index.html
+/admin.html
+/User/partials/header.html
+/User/home/views/home.html
+/css/style.css
+/css/site.min.css
+/css/landing-page.css
+/js/site.min.js
+/js/app.min.js
+/images/ipad.png
+/images/dog.png
+/images/phones.png
+/images/intro-bg.jpg
+/images/banner-bg.jpg
+
+NETWORK:
+*
+
+FALLBACK:
+offline.html
