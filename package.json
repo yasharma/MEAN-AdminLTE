@@ -23,7 +23,7 @@
     "helmet": "^3.3.0",
     "jsonwebtoken": "^7.2.1",
     "lodash": "^4.17.4",
-    "mongoose": "^4.7.6",
+    "mongoose": "^5.12.2",
     "mongoose-unique-validator": "^1.0.3",
     "morgan": "^1.7.0",
     "multer": "^1.2.1",
