@@ -12,7 +12,7 @@
     "start": "node app.js"
   },
   "dependencies": {
-    "async": "^2.1.4",
+    "async": "^3.2.2",
     "bluebird": "^3.4.7",
     "body-parser": "^1.15.2",
     "compression": "^1.6.2",
@@ -23,7 +23,7 @@
     "helmet": "^3.3.0",
     "jsonwebtoken": "^7.2.1",
     "lodash": "^4.17.4",
-    "mongoose": "^4.7.6",
+    "mongoose": "^5.7.3",
     "mongoose-unique-validator": "^1.0.3",
     "morgan": "^1.7.0",
     "multer": "^1.2.1",
